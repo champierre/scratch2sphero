@@ -27,7 +27,7 @@ select the "Enable remote sensor connections" option.
 - speed(default: 20) - roll speed
 - initial_heading(default: 0) - initial heading in degree
 
-## Demo movie
+## Demo Movies
 
 - [Scratch x Sphero](https://www.youtube.com/watch?v=aHL03UHULm0)
 - [Sphero 2.0 controlled by Scratch(Japanese)](https://www.youtube.com/watch?v=qCeJ6_UKnk4)
