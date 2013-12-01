@@ -10,8 +10,10 @@ With Scratch2Sphero, you can control [Sphero 2.0](http://www.gosphero.com/) from
 
 ## Installation
 
+```
 % gem install sphero
 % git clone git@github.com:champierre/scratch2sphero.git
+```
 
 ## Getting Started
 
@@ -19,14 +21,11 @@ With Scratch2Sphero, you can control [Sphero 2.0](http://www.gosphero.com/) from
 2. On Scratch, right-click on the () Sensor Value block, found in the Sensing category, and 
 select the "Enable remote sensor connections" option.
 3. On the terminal, run scratch2sphero.rb.
-
-% ruby scratch2sphero.rb
-
 4. Use Broadcast backward/forward/left/right block, found in the Control category, to make Sphero roll to the direction specified.
 5. You can use the following Scratch variables to change the behavior of Sphero.
 
-speed(default: 20) - roll speed
-initial_heading(default: 0) - initial heading in degree
+- speed(default: 20) - roll speed
+- initial_heading(default: 0) - initial heading in degree
 
 ## Demo movie
 
