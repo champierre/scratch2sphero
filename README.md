@@ -6,11 +6,13 @@ With Scratch2Sphero, you can control [Sphero 2.0](http://www.gosphero.com/) from
 
 - [Sphero](http://www.gosphero.com/)
 - [Scratch 1.4](http://scratch.mit.edu/scratch_1.4/)
-- [sphero gem](https://github.com/tenderlove/sphero)
+- [hybridgroup-serialport](https://github.com/hybridgroup/ruby-serialport/)
+- [sphero gem](https://github.com/tenderlove/sphero/)
 
 ## Installation
 
 ```
+% gem install hybridgroup-serialport
 % gem install sphero
 % git clone git@github.com:champierre/scratch2sphero.git
 ```
