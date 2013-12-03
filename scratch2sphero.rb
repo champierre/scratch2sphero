@@ -28,8 +28,6 @@ class PrintRSC < RSCWatcher
     elsif name == "initial_heading"
       @initial_heading = value.to_i
       @current_heading = 0
-    elsif name == "interval"
-      @interval = value.to_i
     end
   end
 
@@ -58,8 +56,10 @@ class PrintRSC < RSCWatcher
     case action
     when "move"
       steps = argument.to_i
-      sleep_seconds = steps / 10
-      _roll(@speed, @initial_heading + @current_heading, sleep_seconds)
+      n = steps / 10
+      n.times do
+        _roll(@speed, @initial_heading + @current_heading)
+      end
     when "turn"
       heading = argument.to_i
       puts "turn #{heading}"
@@ -67,21 +67,17 @@ class PrintRSC < RSCWatcher
     end
   end
 
-
   private
-  def _roll(speed, heading, sleep_seconds = 1)
+  def _roll(speed, heading)
     if heading < 0
-      heading = 360 + heading
+      heading = heading % 360 + 360
     elsif heading > 359
-      heading = heading - 360
+      heading = heading % 360
     end
 
     puts "roll #{@speed}, #{heading}"
-    puts "sleep #{sleep_seconds}"
     @sphero.roll(speed, heading)
-    sleep sleep_seconds
-    @sphero.stop
-    sleep @interval
+    sleep 2
   end
 end
 

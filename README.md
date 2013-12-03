@@ -37,9 +37,6 @@ select the "Enable remote sensor connections" option.
 
 - speed(default: 20) - roll speed
 - initial_heading(default: 0) - initial heading in degree
-- interval(default: 2) - interval between each move
-
-
 
 ## Demo Movies
 
