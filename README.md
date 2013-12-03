@@ -30,11 +30,16 @@ or
 2. On Scratch, right-click on the () Sensor Value block, found in the Sensing category, and 
 select the "Enable remote sensor connections" option.
 3. On the terminal, run scratch2sphero.rb.
-4. Use Broadcast backward/forward/left/right block, found in the Control category, to make Sphero roll to the direction specified.
-5. You can use the following Scratch variables to change the behavior of Sphero.
+4. Use Broadcast move_10, found in the Control category, to make Sphero roll. The number after "move_" is the duration that Sphero keeps moving. You can send "move_20", "move_30"... to make Sphero move longer.
+5. Use Broadcast turn_90 to make Sphero turn. The number after "turn_" is the degree that Sphero turns.
+6. (Alternative) Use Broadcast backward/forward/left/right block, found in the Control category, to make Sphero roll to the direction specified.
+7. You can use the following Scratch variables to change the behavior of Sphero.
 
 - speed(default: 20) - roll speed
 - initial_heading(default: 0) - initial heading in degree
+- interval(default: 2) - interval between each move
+
+
 
 ## Demo Movies
 
