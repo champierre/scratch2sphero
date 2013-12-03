@@ -1,20 +1,27 @@
 ## Scratch2Sphero
 
-With Scratch2Sphero, you can control [Sphero 2.0](http://www.gosphero.com/) from [Scratch 1.4](http://scratch.mit.edu). Tested on MacOS X(10.8.5).
+With Scratch2Sphero, you can control [Sphero 2.0](http://www.gosphero.com/) from [Scratch 1.4](http://scratch.mit.edu). Tested on MacOS X(10.8.5 and 10.9).
 
 ## Requirements
 
 - [Sphero](http://www.gosphero.com/)
 - [Scratch 1.4](http://scratch.mit.edu/scratch_1.4/)
 - [hybridgroup-serialport](https://github.com/hybridgroup/ruby-serialport/)
-- [sphero gem](https://github.com/tenderlove/sphero/)
+- [sphero gem](https://github.com/hybridgroup/sphero/)
 
 ## Installation
 
 ```
+% git clone git@github.com:champierre/scratch2sphero.git
+% bundle install
+```
+
+or
+
+```
+% git clone git@github.com:champierre/scratch2sphero.git
 % gem install hybridgroup-serialport
 % gem install sphero
-% git clone git@github.com:champierre/scratch2sphero.git
 ```
 
 ## Getting Started

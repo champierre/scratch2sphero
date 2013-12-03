@@ -1,0 +1,12 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    hybridgroup-serialport (1.2.1)
+    sphero (1.4.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  hybridgroup-serialport
+  sphero

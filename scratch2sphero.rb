@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require_relative "scratchrsc"
 require "sphero"
 class PrintRSC < RSCWatcher
@@ -14,6 +15,10 @@ class PrintRSC < RSCWatcher
     broadcast "right"
     broadcast "backward"
     broadcast "left"
+    broadcast "move_10"
+    broadcast "turn_90"
+
+    ObjectSpace.define_finalizer(self, self.finalize)
   end
   
   def on_sensor_update(name, value) # when a variable or sensor is updated
@@ -44,11 +49,35 @@ class PrintRSC < RSCWatcher
     _roll(@speed, heading)
   end
 
+  def on_broadcast(name)
+    (action, argument) = name.split('_')
+    case action
+    when "move"
+      steps = argument.to_i
+      time = steps / 10.0
+      _roll(@speed, @initial_heading)
+      puts "keep_going #{time}"
+      @sphero.keep_going(5)
+    when "turn"
+      heading = argument.to_i
+      puts "heading = #{heading}"
+      @sphero.heading = heading
+    end
+
+  end
+
+  def finalize
+    proc {
+      puts "finalize"
+      @sphero.close
+    }
+  end
+
   private
   def _roll(speed, heading)
     if heading < 0
       heading = 360 + heading
-    elsif heading > 360
+    elsif heading > 359
       heading = heading - 360
     end
 
