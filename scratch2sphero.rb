@@ -85,8 +85,7 @@ class PrintRSC < RSCWatcher
 
   private
   def _roll(speed, heading, steps = 10)
-    n = steps / 10
-    n = n > 10 ? 10 : n
+    sleep_time = steps / 10.0
     
     if heading < 0
       heading = heading % 360 + 360
@@ -94,11 +93,11 @@ class PrintRSC < RSCWatcher
       heading = heading % 360
     end
 
-    n.times do
-      puts "roll #{@speed}, #{heading}"
-      @sphero.roll(speed, heading)
-      sleep 2
-    end
+    puts "roll #{@speed}, #{heading}"
+    @sphero.roll(speed, heading)
+    sleep sleep_time
+    @sphero.stop
+    sleep 1
   end
 end
 
