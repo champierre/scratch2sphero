@@ -40,7 +40,7 @@ select the "Enable remote sensor connections" option.
 
 ## Demo Script(Sphero draws square)
 
-![Sphero draws square](https://dl.dropboxusercontent.com/u/385564/scratch2sphero/square.png)
+![Sphero draws square](https://dl.dropboxusercontent.com/u/385564/scratch2sphero/sphero_square.png)
 
 ## Demo Movies
 
