@@ -12,16 +12,16 @@ With Scratch2Sphero, you can control [Sphero 2.0](http://www.gosphero.com/) from
 ## Installation
 
 ```
-% git clone git@github.com:champierre/scratch2sphero.git
+% https://github.com/champierre/scratch2sphero.git
 % bundle install
 ```
 
 or
 
 ```
-% git clone git@github.com:champierre/scratch2sphero.git
-% gem install hybridgroup-serialport
-% gem install sphero
+% git clone https://github.com/champierre/scratch2sphero.git
+% ('sudo' if necessary) gem install hybridgroup-serialport
+% ('sudo' if necessary) gem install sphero
 ```
 
 ## Getting Started
