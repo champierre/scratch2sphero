@@ -12,7 +12,7 @@ With Scratch2Sphero, you can control [Sphero 2.0](http://www.gosphero.com/) from
 ## Installation
 
 ```
-% https://github.com/champierre/scratch2sphero.git
+% git clone https://github.com/champierre/scratch2sphero.git
 % bundle install
 ```
 
