@@ -2,6 +2,7 @@
 # scratchrsc.rb is based on the one file library(http://pastebin.com/XCqPeeyW)
 # created by Scratcher logiblocs(http://scratch.mit.edu/users/logiblocs/).
 #
+# it uses the Remote Sensor Connections protocol (http://wiki.scratch.mit.edu/wiki/Remote_Sensors_Protocol) to talk to Scratch over sockets
 
 require "socket"
 require "scanf"
