@@ -73,12 +73,17 @@ select the ["Enable remote sensor connections"](http://wiki.scratch.mit.edu/wiki
 
 ## Demo Movies
 
-- [![Scratch x Sphero](http://img.youtube.com/vi/aHL03UHULm0/0.jpg)](https://www.youtube.com/watch?v=aHL03UHULm0) 
-  [Scratch x Sphero](https://www.youtube.com/watch?v=aHL03UHULm0)
-- [![Sphero 2.0 controlled by Scratch(Japanese + English caption)](http://img.youtube.com/vi/qCeJ6_UKnk4/0.jpg)](https://www.youtube.com/watch?v=qCeJ6_UKnk4)
-  [Sphero 2.0 controlled by Scratch(Japanese + English caption)](https://www.youtube.com/watch?v=qCeJ6_UKnk4)
-- [![Sphero colors via Scratch](http://img.youtube.com/vi/UoYA4e8f9Ns/0.jpg)](https://www.youtube.com/watch?v=UoYA4e8f9Ns)
-  [Sphero colors via Scratch](https://www.youtube.com/watch?v=UoYA4e8f9Ns)
+### [Scratch x Sphero](https://www.youtube.com/watch?v=aHL03UHULm0)
+
+[![Scratch x Sphero](http://img.youtube.com/vi/aHL03UHULm0/0.jpg)](https://www.youtube.com/watch?v=aHL03UHULm0) 
+
+### [Sphero 2.0 controlled by Scratch(Japanese + English caption)](https://www.youtube.com/watch?v=qCeJ6_UKnk4)
+
+[![Sphero 2.0 controlled by Scratch(Japanese + English caption)](http://img.youtube.com/vi/qCeJ6_UKnk4/0.jpg)](https://www.youtube.com/watch?v=qCeJ6_UKnk4)
+
+### [Sphero colors via Scratch](https://www.youtube.com/watch?v=UoYA4e8f9Ns)
+
+[![Sphero colors via Scratch](http://img.youtube.com/vi/UoYA4e8f9Ns/0.jpg)](https://www.youtube.com/watch?v=UoYA4e8f9Ns)
 
 ## Additional Resources
 
