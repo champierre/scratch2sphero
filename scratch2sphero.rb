@@ -141,10 +141,9 @@ class PrintRSC < RSCWatcher
     else
       begin
         puts "#{@sphero_name} -- color #{color_name}"
-        @sphero.color color_name
+        @sphero.color color_name.downcase
       rescue => e
         puts "#{@sphero_name} -- unable to set color_name #{color_name}. #{e.message}"
-        puts "#{@sphero_name} -- unable to set color_name #{color_name}.  #{e.message}"
       end
      end
   end
