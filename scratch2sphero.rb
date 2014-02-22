@@ -8,6 +8,7 @@ class PrintRSC < RSCWatcher
 
     sphero_tty = Dir.glob("/dev/tty.Sphero*").first
     @sphero = Sphero.new sphero_tty
+    @sphero.stop
     @speed = 20
     @initial_heading = 0
     @current_heading = 0
