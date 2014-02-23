@@ -55,11 +55,19 @@ select the ["Enable remote sensor connections"](http://wiki.scratch.mit.edu/wiki
 
 #### Color
 
-  Who doesn't like rainbows?  Especially blinking double rainbows.  You can control the main LED color of Sphero via the color broadcast.
+  Who doesn't like rainbows?  Especially blinking double rainbows.
+
+##### Color Name
+
+  You can control the main LED color of Sphero via the color broadcast.
   
 - create a global variable named color_name and assign it a [color name](http://www.w3schools.com/html/html_colornames.asp), then broadcast "color".
 - you can also define new broadcasts with color_name where name is one of the valid color names, e.g. broadcast "color_cadetblue" or broadcast "color_crimson"
 - if you send it an invalid, or blank, color name, it will restore to the saved default color for your Sphero
+
+##### RGB Color
+
+  Create three global variables, r, g, and b and when these values change, the sphero will change.  To see how it works, display the variables in scratch, and right click to turn them into sliders.  Simply drag the sliders and see the color update.  There is also an 'rgb' broadcast available too.
 
 ## Demo Scripts
 

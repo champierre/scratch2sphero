@@ -28,6 +28,7 @@ class PrintRSC < RSCWatcher
     broadcast "backward"
     
     broadcast "color"
+    broadcast "rgb"
     
     broadcast "back_led_on"
     broadcast "back_led_off"
@@ -36,13 +37,14 @@ class PrintRSC < RSCWatcher
     @sphero_name = bluetooth_info.body.pack('C'*16).strip unless bluetooth_info.nil?
     # there seems to be some timing issue where the bluetooth_info isn't already ready in time when I'm asking for it so this is a quick hack to avoid an error
     # I'm also not sure what it'll do with extended character sets
-    @sphero_name = "-->unknown<--" if @sphero_name.nil?
-    # this needs more work... when it is unknown we don't seem to have communication with the ball -- somehow I think it is preventing the "Resource Busy" exception?
+    raise "Unable to get Sphero's name... Please Try Again" if @sphero_name.nil?
     puts "Connected to #{@sphero_name}"
+    user_led_color
   end
   
-  def on_sensor_update(name, value) # when a variable or sensor is updated
-    value = value.to_i if %w(speed initial_heading steps degrees).include? name
+  # when a variable or sensor is updated
+  def on_sensor_update(name, value)
+    value = value.to_i if %w(speed initial_heading steps degrees r g b).include? name
     if name == "speed"
       @speed = value
     elsif name == "initial_heading"
@@ -53,9 +55,17 @@ class PrintRSC < RSCWatcher
       @degrees = value
     elsif name == "color_name"
       @color_name = value
+    elsif name == "r"
+      @r = value
+    elsif name == "g"
+      @g = value
+    elsif name == "b"
+      @b = value
     end
     puts "#{@sphero_name} -- #{name} assigned #{value}"
-    puts "#{@sphero_name} -- current_heading: #{@current_heading}, absolute_heading: #{@initial_heading + @current_heading}"
+    color if name == "color_name"
+    rgb if %w(r g b).include? name
+    #puts "#{@sphero_name} -- current_heading: #{@current_heading}, absolute_heading: #{@initial_heading + @current_heading}"
   end
 
   def broadcast_move
@@ -89,6 +99,10 @@ class PrintRSC < RSCWatcher
   
   def broadcast_color
     color
+  end
+  
+  def broadcast_rgb
+    rgb
   end
 
   def broadcast_back_led_on
@@ -147,11 +161,28 @@ class PrintRSC < RSCWatcher
      end
   end
   
+  # sets the RGB color of the sphero via the @r, @g, and @b
+  def rgb(r=@r, g=@g, b=@b)
+    # I think the sphero gem's limit1() should probably handle these potential for nils... you can call rgb with the nils, it doesn't error but it puts the sphero in a non-communicative state
+    r = 0 if r.nil?
+    g = 0 if g.nil?
+    b = 0 if b.nil?
+    puts "#{@sphero_name} -- rgb #{r}/#{g}/#{b}"
+    @sphero.rgb r, g, b
+  end
+  
   # reset the color of the sphero to the persistent user selected colour
   def user_led_color()
-    puts "#{@sphero_name} -- Reseting color to user_led"
+    puts "#{@sphero_name} -- Resetting color to user_led"
     user_led = @sphero.user_led
-    @sphero.rgb user_led.body[0], user_led.body[1], user_led.body[2]
+    if user_led && user_led.body.nil?
+      puts "#{@sphero_name} -- No default user_led value"
+    else
+      @r = user_led.body[0]
+      @g = user_led.body[1]
+      @b = user_led.body[2]
+      rgb
+    end
   end
   
   # turns on the back LED so you know which way is forward.
@@ -176,5 +207,5 @@ begin
 rescue Errno::ECONNREFUSED
   puts "\033[31m\033[1mError: Scratch may not be running or remote sensor connections are not enabled.\033[00m\n"
 rescue => e
-  puts "\033[31m\033[1mError: #{e.message}\033[00m\n"
+  puts "\033[31m\033[1mError: #{e.message}\n#{e.backtrace.join('\n\t')}\033[00m\n"
 end
