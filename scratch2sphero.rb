@@ -63,8 +63,15 @@ class PrintRSC < RSCWatcher
       @b = value
     end
     puts "#{@sphero_name} -- #{name} assigned #{value}"
-    color if name == "color_name"
-    rgb if %w(r g b).include? name
+    # whenever we set the color_name, do the color routine, and send the color broadcast
+    if name == "color_name"
+      color
+      broadcast("color")
+    end
+    if %w(r g b).include? name
+      rgb
+      broadcast("rgb") 
+    end
     #puts "#{@sphero_name} -- current_heading: #{@current_heading}, absolute_heading: #{@initial_heading + @current_heading}"
   end
 
@@ -155,6 +162,10 @@ class PrintRSC < RSCWatcher
       begin
         puts "#{@sphero_name} -- color #{color_name}"
         @sphero.color color_name
+        rgb = @sphero.rgb_from_colorname color_name
+        sensor_update "r", rgb[:r]
+        sensor_update "g", rgb[:g]
+        sensor_update "b", rgb[:b]
       rescue => e
         puts "#{@sphero_name} -- unable to set color_name #{color_name}.  #{e.message}"
       end
@@ -168,6 +179,9 @@ class PrintRSC < RSCWatcher
     g = 0 if g.nil?
     b = 0 if b.nil?
     puts "#{@sphero_name} -- rgb #{r}/#{g}/#{b}"
+    sensor_update "r", r
+    sensor_update "g", g
+    sensor_update "b", b
     @sphero.rgb r, g, b
   end
   
@@ -200,6 +214,15 @@ class PrintRSC < RSCWatcher
   
 end
 
+class Sphero
+  # hack to give me the rgb used by a colorname
+  # the sphero itself won't return to me the current color (only the configured color it seems)
+  def rgb_from_colorname(colorname)
+    color=COLORS[colorname]
+    return {:r => color[:r], :g => color[:g], :b => color[:b]}
+  end
+end
+
 begin
   watcher = PrintRSC.new # you can provide the host as an argument
   watcher.sensor_update "connected", "1"
@@ -207,5 +230,5 @@ begin
 rescue Errno::ECONNREFUSED
   puts "\033[31m\033[1mError: Scratch may not be running or remote sensor connections are not enabled.\033[00m\n"
 rescue => e
-  puts "\033[31m\033[1mError: #{e.message}\n#{e.backtrace.join('\n\t')}\033[00m\n"
+  puts "\033[31m\033[1mError: #{e.message}\n#{e.backtrace.join("\n\t")}\033[00m\n"
 end

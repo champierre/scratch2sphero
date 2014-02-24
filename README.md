@@ -64,6 +64,7 @@ select the ["Enable remote sensor connections"](http://wiki.scratch.mit.edu/wiki
 - create a global variable named color_name and assign it a [color name](http://www.w3schools.com/html/html_colornames.asp), then broadcast "color".
 - you can also define new broadcasts with color_name where name is one of the valid color names, e.g. broadcast "color_cadetblue" or broadcast "color_crimson"
 - if you send it an invalid, or blank, color name, it will restore to the saved default color for your Sphero
+- these broadcasts will update the 'sensor values' r, g, and b so you can have access to them via the sensor blocks
 
 ##### RGB Color
 
