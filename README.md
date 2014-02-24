@@ -88,6 +88,8 @@ select the ["Enable remote sensor connections"](http://wiki.scratch.mit.edu/wiki
   [Sphero 2.0 controlled by Scratch(Japanese)](https://www.youtube.com/watch?v=qCeJ6_UKnk4)
 - [![Sphero colors via Scratch](http://img.youtube.com/vi/UoYA4e8f9Ns/0.jpg)](https://www.youtube.com/watch?v=UoYA4e8f9Ns)
   [Sphero colors via Scratch](https://www.youtube.com/watch?v=UoYA4e8f9Ns)
+- [![RGB demo](http://img.youtube.com/vi/CcnS2AaIhMM/0.jpg)](https://www.youtube.com/watch?v=CcnS2AaIhMM)
+  [RGB demo](https://www.youtube.com/watch?v=CcnS2AaIhMM)
 
 ## Additional Resources
 
@@ -95,3 +97,4 @@ select the ["Enable remote sensor connections"](http://wiki.scratch.mit.edu/wiki
 - [Scratch's Remote Sensor Control Protocol](http://wiki.scratch.mit.edu/wiki/Remote_Sensors_Protocol)
 - [Sphero API](http://orbotixinc.github.io/Sphero-Docs/docs/sphero-api/)
 - [Color Names](http://www.w3schools.com/html/html_colornames.asp)
+- Two Scratch 2.0 projects dealing with RGB colors are the simple [Setting Color RGB](http://scratch.mit.edu/projects/2641383/) and the complex [RGB Colour Mixer](http://scratch.mit.edu/projects/187848/)
