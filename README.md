@@ -25,6 +25,8 @@ or
 % ('sudo' if necessary) gem install sphero
 ```
 
+If you cannot use git, you can download the source code from "Download ZIP" button appeared on the right side of the README page.
+
 ## Getting Started
 
 ### Getting Scratch and Sphero to talk to each other on your Mac
