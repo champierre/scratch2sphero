@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-gem 'hybridgroup-serialport'
+gem 'serialport'
 gem 'sphero'
