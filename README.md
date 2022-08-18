@@ -93,3 +93,4 @@ select the ["Enable remote sensor connections"](http://wiki.scratch.mit.edu/wiki
 - [Scratch's Remote Sensor Control Protocol](http://wiki.scratch.mit.edu/wiki/Remote_Sensors_Protocol)
 - [Sphero API](http://orbotixinc.github.io/Sphero-Docs/docs/sphero-api/)
 - [Color Names](http://www.w3schools.com/html/html_colornames.asp)
+- [List of Color Names Supported by All Browsers](https://www.scaler.com/topics/html-color-names/#list-of-color-names-supported-by-all-browsers)
